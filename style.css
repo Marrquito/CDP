@@ -36,7 +36,12 @@ footer {
     font-style: italic;
 }
 
-button {
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button#entrar {
     width: 300px;
     height: 60px;
     background: #006a68;
@@ -44,13 +49,29 @@ button {
     border-radius: 8px;
     color: #fff;
     font-weight: 700;
-    margin-top: 16px;
-    display: inline-block;
     text-align: center;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
     transition: filter 0.2s;
+    cursor: pointer;
+    outline: none; 
+}
+
+button#create {
+    background: none;
+    color:  #006a68;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    outline: none; 
+}
+
+button:hover { /*quando esta com o mouse em cima*/
+    text-decoration: underline;
 }
 
 input{
@@ -62,3 +83,106 @@ input{
     padding: 0 24px;
     margin-bottom: 16px;
 }
+
+
+
+#modal {
+    background:#006a68;
+    position: absolute; /*absolute vai ficar em cima do conteudo da tela e habilita outras opções*/
+    top: 0; /*deixa na posição 0*/
+    width: 100vw; /*toda a area visivel do dispositivo*/
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    transition: 300ms;
+}
+
+#modal .content {
+    margin-top: 128px;
+    color: white
+}
+
+#modal .content h1{
+    color: #3f3f3d;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+#modal form {
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*cria colunas mais adaptadas*/
+    gap: 20px; /*da uma separação nos objetos*/
+}
+
+.content form div:nth-child(3), /*pega a div 3,4,5 e espande pras 2 colunas*/
+.content form div:nth-child(4),
+.content form div:nth-child(5){
+    grid-column: span 2;
+}
+
+form input, form textarea{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box; /* n vai deixar o conteudo ficar acavalado*/
+    border-radius: 6px;
+    border: 1px solid rgba(141, 25, 52, 0.5);
+    outline:none;
+    font-size: 16px;
+
+}
+
+form label {
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px
+}
+
+form a {
+    width: 150px;
+    height: 40px;
+    background: #ffffff22;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: end;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 300ms;
+}
+
+form a:hover {
+    background: #fff;
+    color: #019693;
+    text-decoration: none;
+}
+
+form button {
+    background: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 32px;
+    grid-column: 2;
+    justify-self: end;
+    transition: 300ms;
+
+}
+
+form button:hover {
+    background-color: #019693;
+    color: white;
+    text-decoration: none;
+
+}
+#modal.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+

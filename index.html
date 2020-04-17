@@ -9,28 +9,62 @@
     <header>
         <h1> Casa dos PDF</h1>
     </header>
-    <section>
-        <img src="./assets/CDP-PNG.png" alt="">
-        <form>
-
-            <div>
-                <p>
-                    <input type="email" placeholder="Seu email" </input>
-                    <input type="password" placeholder="Sua senha"</input>
-                </p>
-            </div>
-            <div>
-                <button>Entrar</button>
-            </div>
-        
-        </form>
+    <div>
+        <section>
+            <img src="./assets/CDP-PNG.png" alt="">
+            <form>
+                
+                <div>
+                    <p>
+                        <input type="email" placeholder="Seu email" </input>
+                        <input type="password" placeholder="Sua senha"</input>
+                    </p>
+                </div>
+                <div class="buttons">
+                    <button onclick="onOff()" id="create">+ Cadastrar </button>
+                    <button id="entrar">Entrar</button>
+                </div>
+                
+            </form>
         </section>
-    
-    
-    
-    <footer>
-        <p>&copy; CDF </p>
-    </footer>
+        
+        <footer>
+            <p>&copy; CDF </p>
+        </footer>
+    </div>
 
+    <div id="modal" class="hide">
+        <div class="content">
+            <h1>Cadastrar novo usuário</h1>
+
+            <form action="">
+        
+                <div class="input-wrapper">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome">
+                </div>
+                
+                <div class="input-wrapper">
+                    <label for="email">Email</label>
+                    <input type="email" name="email">
+                </div>
+                
+                <div class="input-wrapper">
+                    <label for="Senha">Senha</label>
+                    <input type="password" name="Senha">
+                </div>
+            
+                <a href="#" onclick="onOff()">Voltar</a>
+                <button>Salvar</button>
+        </form>
+    </div>
+
+</div>
+<script src="script.js"></script>
 </body>
 </html>
